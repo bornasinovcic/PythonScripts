@@ -3,7 +3,7 @@ import os
 
 def main():
     os.chdir("/home/borna/Desktop/zero")
-    extension = ".txt"
+    extension = ".c"
     j = 1
     for i in os.listdir():
         if i.endswith(extension):
