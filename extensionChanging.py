@@ -2,9 +2,9 @@ import os
 
 
 def main():
-    os.chdir("/home/borna/Desktop/zero")
-    old_extension = ".jpg"
-    new_extension = ".sh"
+    os.chdir("../test")
+    old_extension = ".html"
+    new_extension = ".php"
     for i in os.listdir():
         if i.endswith(old_extension):
             base = os.path.splitext(i)[0]
@@ -13,3 +13,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    print("Code successfully finished")
