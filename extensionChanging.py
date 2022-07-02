@@ -13,4 +13,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-    print("Code successfully finished")
+    print(f"Code successfully finished")

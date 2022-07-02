@@ -52,4 +52,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-    print("Code finished")
+    print(f"Code finished")
