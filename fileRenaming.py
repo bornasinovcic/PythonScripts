@@ -6,26 +6,36 @@ def main():
     dictionary = {}
     extension = ".jpg"
     os.chdir("../../Desktop/wallpapers-master")
+    number_of_files = len(str(len(os.listdir())))
     for i in os.listdir():
         if i.endswith(extension):
             dictionary.update({i: os.path.getsize(i)})
     sorted_d = sorted(dictionary, key=dictionary.get, reverse=True)
     for i in sorted_d:
         if j <= 9:
-            if not os.path.isfile("00" + str(j) + extension):
-                os.rename(i, "00" + str(j) + extension)
+            number_of_zeros = (number_of_files - 1) * '0'
+            if not os.path.isfile(number_of_zeros + str(j) + extension):
+                os.rename(i, number_of_zeros + str(j) + extension)
         elif 10 <= j <= 99:
-            if not os.path.isfile("0" + str(j) + extension):
-                os.rename(i, "0" + str(j) + extension)
+            number_of_zeros = (number_of_files - 2) * '0'
+            if not os.path.isfile(number_of_zeros + str(j) + extension):
+                os.rename(i, number_of_zeros + str(j) + extension)
         elif 100 <= j <= 999:
-            if not os.path.isfile("" + str(j) + extension):
-                os.rename(i, "" + str(j) + extension)
+            number_of_zeros = (number_of_files - 3) * '0'
+            if not os.path.isfile(number_of_zeros + str(j) + extension):
+                os.rename(i, number_of_zeros + str(j) + extension)
         elif 1000 <= j <= 9999:
-            if not os.path.isfile("0" + str(j) + extension):
-                os.rename(i, "0" + str(j) + extension)
+            number_of_zeros = (number_of_files - 4) * '0'
+            if not os.path.isfile(number_of_zeros + str(j) + extension):
+                os.rename(i, number_of_zeros + str(j) + extension)
+        elif 10000 <= j <= 99999:
+            number_of_zeros = (number_of_files - 5) * '0'
+            if not os.path.isfile(number_of_zeros + str(j) + extension):
+                os.rename(i, number_of_zeros + str(j) + extension)
         else:
-            if not os.path.isfile(str(j) + extension):
-                os.rename(i, str(j) + extension)
+            number_of_zeros = (number_of_files - 6) * '0'
+            if not os.path.isfile(number_of_zeros + str(j) + extension):
+                os.rename(i, number_of_zeros + str(j) + extension)
         j += 1
 
 
